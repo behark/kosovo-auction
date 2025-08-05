@@ -3,15 +3,34 @@ import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import Navigation from '@/components/layout/Navigation';
-import { Container } from '@/components/ui/Container';
-import { Button } from '@/components/ui/Button';
-import VehicleGallery from '@/components/vehicles/VehicleGallery';
-import VehicleSpecifications from '@/components/vehicles/VehicleSpecifications';
-import VehicleContactForm from '@/components/vehicles/VehicleContactForm';
-import { Vehicle } from '@/components/vehicles/VehicleCard';
-import LoadingSpinner from '@/components/ui/LoadingSpinner';
-import VehicleCardSkeleton from '@/components/vehicles/VehicleCardSkeleton';
+
+interface Vehicle {
+  id: string;
+  title: string;
+  make: string;
+  model: string;
+  year: number;
+  mileage: number;
+  mileageUnit: string;
+  fuelType: string;
+  transmission: string;
+  price: number;
+  currency: string;
+  images: string[];
+  location: string;
+  isAuction: boolean;
+  auctionEndsAt: string;
+  featuredUntil: string;
+  condition: string;
+  exteriorColor: string;
+  interiorColor: string;
+  engineSize: string;
+  enginePower: string;
+  enginePowerUnit: string;
+  bodyType: string;
+  doors: number;
+  seats: number;
+}
 
 // This would normally come from an API call
 // Mock data for a specific vehicle
